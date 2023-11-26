@@ -1,4 +1,5 @@
 import hashlib
+import sys
 
 
 def compare_passwords(password, encrypted_password):
@@ -11,17 +12,11 @@ def compare_passwords(password, encrypted_password):
 def main():
     with open("password.txt", "r") as password_file:
         password = password_file.read().strip()
-        print("The password given was:", password)
 
     with open("encryptedPassword.txt", "r") as encrypted_password_file:
         encrypted_password = encrypted_password_file.read().strip()
 
-    if compare_passwords(password, encrypted_password):
-        print("The passwords match.")
-        return True
-    else:
-        print("The passwords do not match.")
-        return False
+    return compare_passwords(password, encrypted_password)
 
 
 if __name__ == "__main__":

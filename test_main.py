@@ -1,11 +1,5 @@
-import unittest
-import compare_Passwords
+import comparePasswords
 
 
-class TestStringMethods(unittest.TestCase):
-    def test_compare_passwords(self):
-        self.assertTrue(compare_Passwords.main())
-
-
-if __name__ == "__main__":
-    unittest.main()
+def test_main():
+    assert comparePasswords.main() == True
